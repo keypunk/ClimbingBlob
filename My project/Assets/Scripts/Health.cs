@@ -16,6 +16,7 @@ public class Health : MonoBehaviour
     public float invaktuell;
     public GameObject Player;
     public bool isAlive;
+    public Renderer rend;
 
     void Start()
     {
@@ -36,6 +37,10 @@ public class Health : MonoBehaviour
                 gothit = false;
                 invaktuell = invtime;
             }
+        }
+        if (isAlive == false)
+        {
+            GetComponent<Renderer>().enabled = false;
         }
     }
     private void OnTriggerEnter2D(Collider2D Enemy)
@@ -58,6 +63,7 @@ public class Health : MonoBehaviour
             if (currentHP <= 0)
             {
                 isAlive = false;
+
             }
         
     }
