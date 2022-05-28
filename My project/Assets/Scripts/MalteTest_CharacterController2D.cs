@@ -12,6 +12,8 @@ public class MalteTest_CharacterController2D : MonoBehaviour
     public float jumpHeight = 6.5f;
     public float gravityScale = 1.5f;
     public Camera mainCamera;
+    public GameObject Player;
+    
 
 
     public bool Dash;
@@ -56,105 +58,109 @@ public class MalteTest_CharacterController2D : MonoBehaviour
 
     void Update()
     {
+        if (Player.GetComponent<Health>().isAlive)
+        {
 
-        // Movement controls
-        if (dashTime == startDashTime)
-        {
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) )
-        {
-            moveDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
-        }
-        else
-        {
-            moveDirection = 0;
-        }
-
-        // Change facing direction
-            
-            
-                if (moveDirection > 0 && !facingRight)
-                {
-                    facingRight = true;
-                    //t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
-                }
-                if (moveDirection < 0 && facingRight)
-                {
-                    facingRight = false;
-                    //t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-                }
-            
-        }
         
-        
-        // Jumping
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
-        {
 
-            r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-        }
-
-        //  Dash
-        if (dashUp)
-        {
-            initialDash = true;
-        }
-        if (Dash && direction == 0)
-        {
-            if (isGrounded)
+            // Movement controls
+            if (dashTime == startDashTime)
             {
-                dashUp = true;
-            }
-            if (facingRight && Input.GetKeyDown(KeyCode.LeftShift) && dashUp)
+                if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow) )
             {
-                direction = 1;
-                dashUp = false;
-            }
-            else if (!facingRight && Input.GetKeyDown(KeyCode.LeftShift) && dashUp)
-            {
-                direction = 2;
-                dashUp = false;
-            }
-        }
-        else
-        {
-            if (dashTime <= 0)
-            {
-                direction = 0;
-                dashTime = startDashTime;
+                 moveDirection = Input.GetKey(KeyCode.LeftArrow) ? -1 : 1;
             }
             else
             {
-                dashTime -= Time.deltaTime;
+                moveDirection = 0;
+            }
 
-                if (facingRight == true)
+            // Change facing direction
+            
+            
+                    if (moveDirection > 0 && !facingRight)
+                    {
+                        facingRight = true;
+                        //t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                    }
+                    if (moveDirection < 0 && facingRight)
+                    {
+                        facingRight = false;
+                        //t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                    }
+            
+            }
+        
+        
+            // Jumping
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+            {
+
+                r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            }
+
+            //  Dash
+            if (dashUp)
+            {
+                initialDash = true;
+            }
+            if (Dash && direction == 0)
+            {
+                if (isGrounded)
                 {
-                    if (initialDash)
-                    {
-                        r2d.velocity = new Vector2(r2d.velocity.x + (moveDirection) * dashSpeed, 0f);
-                        initialDash = false;
-                    }
-                    else
-                    {
-                        r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y);
-                    }
-
-
+                    dashUp = true;
                 }
-                else if (facingRight == false)
+                if (facingRight && Input.GetKeyDown(KeyCode.LeftShift) && dashUp)
                 {
-                    if (initialDash)
+                    direction = 1;
+                    dashUp = false;
+                }
+                else if (!facingRight && Input.GetKeyDown(KeyCode.LeftShift) && dashUp)
+                {
+                    direction = 2;
+                    dashUp = false;
+                }
+            }
+            else
+            {
+                if (dashTime <= 0)
+                {
+                    direction = 0;
+                    dashTime = startDashTime;
+                }
+                else
+                {
+                    dashTime -= Time.deltaTime;
+
+                    if (facingRight == true)
                     {
-                        r2d.velocity = new Vector2(r2d.velocity.x + (moveDirection) * dashSpeed, 0f);
-                        initialDash = false;
+                        if (initialDash)
+                        {
+                            r2d.velocity = new Vector2(r2d.velocity.x + (moveDirection) * dashSpeed, 0f);
+                            initialDash = false;
+                        }
+                        else
+                        {
+                            r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y);
+                        }
+
+
                     }
-                    else
+                    else if (facingRight == false)
                     {
-                        r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y);
+                        if (initialDash)
+                        {
+                            r2d.velocity = new Vector2(r2d.velocity.x + (moveDirection) * dashSpeed, 0f);
+                            initialDash = false;
+                        }
+                        else
+                        {
+                            r2d.velocity = new Vector2(r2d.velocity.x, r2d.velocity.y);
+                        }
                     }
                 }
             }
         }
-        
 
         // Camera follow
         if (mainCamera)
