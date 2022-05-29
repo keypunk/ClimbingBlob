@@ -15,7 +15,7 @@ public class PlayerPos : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("Debug Reset"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

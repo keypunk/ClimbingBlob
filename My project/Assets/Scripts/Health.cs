@@ -63,8 +63,10 @@ public class Health : MonoBehaviour
             if (currentHP <= 0)
             {
                 isAlive = false;
+                FindObjectOfType<AudioManager>().Play("GameOver");
+                Player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
-            }
+        }
         
     }
 }
