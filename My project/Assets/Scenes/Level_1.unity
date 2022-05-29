@@ -9063,12 +9063,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536469659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 45.73, y: 1.55, z: 0.4954895}
+  m_LocalPosition: {x: 45.739998, y: 3.37, z: 0}
   m_LocalScale: {x: 3.2372398, y: 4.27362, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1723237805}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &536469661
 BoxCollider2D:
@@ -99775,12 +99775,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814120042}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 69.08, y: 2.52, z: 0.4954895}
+  m_LocalPosition: {x: 69.090004, y: 4.34, z: 0}
   m_LocalScale: {x: 3.2372398, y: 4.27362, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1723237805}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &814120044
 BoxCollider2D:
@@ -101816,6 +101816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4291d58f1dc0237449e067ea51f54d7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameMaster: {fileID: 1723237803}
   leveltoload: 2
 --- !u!1 &1723237803
 GameObject:
@@ -101858,9 +101859,7 @@ Transform:
   m_LocalPosition: {x: 0.01, y: 1.82, z: -0.4954895}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 536469660}
-  - {fileID: 814120043}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

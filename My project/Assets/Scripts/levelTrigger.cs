@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class levelTrigger : MonoBehaviour
 {
+    private GameMaster gm;
     public int leveltoload;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-        { SceneManager.LoadScene(leveltoload); }
+        {
+            gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+            gm.lastCheckPointPos = Vector2.zero;
+            SceneManager.LoadScene(leveltoload); 
+        }
     }
 }
