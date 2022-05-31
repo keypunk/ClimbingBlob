@@ -8,14 +8,18 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
-
+    public bool dJumpReady;
+    public bool dJump;
+    public bool middJump;
     [SerializeField] private LayerMask jumpableGround;
     
     private float dirX;
     [SerializeField] private float moveSpeed = 7f;
     [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float djumpForce = 13f;
 
-    private enum MovementState { idle, running, jumping, falling }
+
+    private enum MovementState { idle, running, jumping, falling, dJumping}
 
     // Start is called before the first frame update
     private void Start()
@@ -29,19 +33,40 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        // setzt dublejump auf aus
+        if (isGrounded())
+        {
+            middJump = false;
+            dJump = false;
+            dJumpReady = false;
+        }
+
+        // aktiviert dJump
+        if (Input.GetButtonDown("Jump") && dJumpReady && !isGrounded())
+        {
+            middJump = true;
+            rb.velocity = new Vector2(rb.velocity.x, djumpForce);
+            dJumpReady = false;
+        }
+        
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
             FindObjectOfType<AudioManager>().Play("Jump");
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            dJumpReady = false;
+        }
+        if (!Input.GetButtonDown("Jump") && !isGrounded())
+        {
+            dJump = true;
         }
         UpdateAnimationState();
         
     }
-
-    private void UpdateAnimationState()
+    
+     private void UpdateAnimationState()
     {
         MovementState state;
         if (dirX > 0f)
@@ -59,7 +84,11 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
         }
 
-        if (rb.velocity.y > .1f)
+        if (rb.velocity.y > .1f && middJump)
+        {
+            state = MovementState.dJumping;
+        }
+        else if (rb.velocity.y > .1f)
         {
             state = MovementState.jumping;
         }
