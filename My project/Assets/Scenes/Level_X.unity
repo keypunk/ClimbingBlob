@@ -8810,15 +8810,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8095fc4241fe4ddb66375ced817246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpTime: 0.3
   dJumpReady: 0
   dJump: 0
   middJump: 0
+  dashReady: 0
+  dirX: 0
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
   moveSpeed: 7
-  jumpForce: 14
+  jumpForce: 8
   djumpForce: 14
+  dashForce: 30
+  dashTime: 0.3
 --- !u!114 &464988129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101940,6 +101945,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ba0e49a15d7200498238b80a99dfa82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isForDJump: 1
+  isForDash: 1
   Player: {fileID: 464988121}
 --- !u!61 &1718562448
 BoxCollider2D:
