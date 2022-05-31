@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CapsuleCollider2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(GameObject))]
 
 public class Health : MonoBehaviour
@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     public int maxHP;
     public int currentHP;
     private bool gothit=false;
-    CapsuleCollider2D mainCollider;
+    BoxCollider2D mainCollider;
     public float invtime;
     public float invaktuell;
     public GameObject Player;
@@ -22,7 +22,7 @@ public class Health : MonoBehaviour
     {
         currentHP = maxHP;
         invaktuell = invtime;
-        mainCollider = GetComponent<CapsuleCollider2D>();
+        mainCollider = Player.GetComponent<BoxCollider2D>();
         isAlive = true;
     }
 
