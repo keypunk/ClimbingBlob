@@ -8586,6 +8586,7 @@ MonoBehaviour:
   isForDJump: 1
   isForDash: 1
   Player: {fileID: 464988121}
+  cdTime: 5
 --- !u!61 &1718562448
 BoxCollider2D:
   m_ObjectHideFlags: 0
