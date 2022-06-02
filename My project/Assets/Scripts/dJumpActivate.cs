@@ -41,6 +41,7 @@ public class dJumpActivate : MonoBehaviour
     {
         if (activate)
         {
+            activate = false;
             timer -= Time.deltaTime;
             if ( timer <= 0)
             {
