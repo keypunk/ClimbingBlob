@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
 
+    public ParticleSystem dJumpParticles;
+    public ParticleSystem dashParticles;
+
     public bool dJumpReady;
     public bool dJump;
     public bool middJump;
@@ -43,6 +46,8 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        dJumpParticles.Stop();
+        dashParticles.Stop();
     }
 
     // Update is called once per frame
@@ -55,8 +60,19 @@ public class PlayerMovement : MonoBehaviour
             dJump = false;
             dJumpReady = false;
             dashReady = false;
+            dJumpParticles.Stop();
+            dashParticles.Stop();
         }
 
+        if (dJumpReady)
+        {
+            dJumpParticles.Play();
+        }
+
+        if (dashReady)
+        {
+            dashParticles.Play();
+        }
         // aktiviert dJump
         if (Input.GetButtonDown("Jump") && dJumpReady && !isGrounded() && !midDash)
         {
@@ -64,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
             middJump = true;
             rb.velocity = new Vector2(rb.velocity.x, djumpForce);
             dJumpReady = false;
+            dJumpParticles.Stop();
+
         }
         
         dirX = Input.GetAxisRaw("Horizontal");
@@ -76,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             dJumpReady = false;
+            dJumpParticles.Stop();
         }
 
         if (Input.GetButton("Jump") && isJumping && !midDash)
@@ -103,6 +122,7 @@ public class PlayerMovement : MonoBehaviour
                 dashRight = false;
             }
             dashReady = false;
+            dashParticles.Stop();
             midDash = true;
             dashTimeCounter -= Time.deltaTime;
         }
