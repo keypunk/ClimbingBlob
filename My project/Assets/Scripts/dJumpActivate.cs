@@ -19,6 +19,7 @@ public class dJumpActivate : MonoBehaviour
     private void Start()
     {
         anim = GetComponent<Animator>();
+        timer = cdTime;
     }
 
     // Start is called before the first frame update
@@ -26,6 +27,7 @@ public class dJumpActivate : MonoBehaviour
     {
         if (other.CompareTag("Player") && !activate)
         {
+            activate = true;
             if (isForDJump)
             {
                 Player.GetComponent<PlayerMovement>().dJumpReady = true;
@@ -34,19 +36,18 @@ public class dJumpActivate : MonoBehaviour
             {
                 Player.GetComponent<PlayerMovement>().dashReady = true;
             }
-            activate = true;
+
         }
     }
     private void Update()
     {
         if (activate)
         {
-            activate = false;
             timer -= Time.deltaTime;
             if ( timer <= 0)
             {
-                activate = false;
                 timer = cdTime;
+                activate = false;
             }
         }
         animationStates state;
