@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded())
         {
             middJump = false;
+            midDash = false;
             dJump = false;
             dJumpReady = false;
             dashReady = false;
