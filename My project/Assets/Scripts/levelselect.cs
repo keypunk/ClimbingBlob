@@ -45,5 +45,12 @@ public class levelselect : MonoBehaviour
             gm.lastCheckPointPos = Vector2.zero;
             SceneManager.LoadScene(4);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
+            gm.lastCheckPointPos = Vector2.zero;
+            SceneManager.LoadScene(5);
+        }
     }
 }

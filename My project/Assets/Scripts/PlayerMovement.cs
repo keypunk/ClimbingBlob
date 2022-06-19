@@ -24,8 +24,10 @@ public class PlayerMovement : MonoBehaviour
     public bool dashReady;
     private bool midDash;
     private bool dashRight;
+    private bool facingright;
 
     public float dirX;
+    
 
 
     [SerializeField] private LayerMask jumpableGround;
@@ -87,6 +89,14 @@ public class PlayerMovement : MonoBehaviour
         
         dirX = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (dirX < 0)
+        {
+            facingright = false;
+        }
+        else if (dirX > 0)
+        {
+            facingright = true;
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
@@ -112,12 +122,12 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButton("Fire3") && dashReady)
         {
-            if (dirX > 0)
+            if (facingright)
             {
                 rb.velocity = new Vector2(dashForce, 0f);
                 dashRight = true;
             }
-            else if (dirX < 0)
+            else if (!facingright)
             {
                 rb.velocity = new Vector2(-dashForce, 0f);
                 dashRight = false;

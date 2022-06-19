@@ -5181,7 +5181,6 @@ GameObject:
   m_Component:
   - component: {fileID: 163430405}
   - component: {fileID: 163430404}
-  - component: {fileID: 163430403}
   m_Layer: 0
   m_Name: Spike_001 (5)
   m_TagString: Damage
@@ -5189,22 +5188,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &163430403
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 163430402}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &163430404
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6622,7 +6605,6 @@ GameObject:
   m_Component:
   - component: {fileID: 645824991}
   - component: {fileID: 645824990}
-  - component: {fileID: 645824989}
   m_Layer: 0
   m_Name: Spike_001 (4)
   m_TagString: Damage
@@ -6630,22 +6612,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &645824989
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645824988}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &645824990
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6723,7 +6689,6 @@ GameObject:
   m_Component:
   - component: {fileID: 665268944}
   - component: {fileID: 665268943}
-  - component: {fileID: 665268942}
   m_Layer: 0
   m_Name: Spike_001 (3)
   m_TagString: Damage
@@ -6731,22 +6696,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &665268942
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665268941}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &665268943
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7036,7 +6985,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1018703846}
   - component: {fileID: 1018703845}
-  - component: {fileID: 1018703844}
   m_Layer: 0
   m_Name: Spike_001 (6)
   m_TagString: Damage
@@ -7044,22 +6992,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1018703844
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1018703843}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &1018703845
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7137,7 +7069,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1028104319}
   - component: {fileID: 1028104318}
-  - component: {fileID: 1028104317}
   m_Layer: 0
   m_Name: Spike_001 (1)
   m_TagString: Damage
@@ -7145,22 +7076,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1028104317
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028104316}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &1028104318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12570,7 +12485,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1511905008}
   - component: {fileID: 1511905007}
-  - component: {fileID: 1511905006}
   m_Layer: 0
   m_Name: Spike_001 (2)
   m_TagString: Damage
@@ -12578,22 +12492,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1511905006
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511905005}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &1511905007
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13756,7 +13654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877325420}
   - component: {fileID: 1877325419}
-  - component: {fileID: 1877325418}
+  - component: {fileID: 1877325421}
   m_Layer: 0
   m_Name: Spike_001
   m_TagString: Damage
@@ -13764,22 +13662,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1877325418
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1877325417}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!212 &1877325419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13853,6 +13735,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1877325421
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877325417}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.46491873, y: -0.044613525}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0898376, y: 0.070772946}
+  m_EdgeRadius: 0
 --- !u!1 &1897043473
 GameObject:
   m_ObjectHideFlags: 0
